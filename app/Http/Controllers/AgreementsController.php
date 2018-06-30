@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Agreement;
 use Illuminate\Http\Request;
 
-class UsersController extends Controller
+class AgreementsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,6 @@ class UsersController extends Controller
     public function index()
     {
         //
-        
     }
 
     /**
@@ -26,7 +25,6 @@ class UsersController extends Controller
     public function create()
     {
         //
-        
     }
 
     /**
@@ -43,10 +41,10 @@ class UsersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\User  $user
+     * @param  \App\Agreement  $agreement
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(Agreement $agreement)
     {
         //
     }
@@ -54,10 +52,10 @@ class UsersController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\User  $user
+     * @param  \App\Agreement  $agreement
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(Agreement $agreement)
     {
         //
     }
@@ -66,10 +64,10 @@ class UsersController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\User  $user
+     * @param  \App\Agreement  $agreement
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, Agreement $agreement)
     {
         //
     }
@@ -77,10 +75,10 @@ class UsersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\User  $user
+     * @param  \App\Agreement  $agreement
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(Agreement $agreement)
     {
         //
     }

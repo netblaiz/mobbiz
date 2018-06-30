@@ -26,31 +26,58 @@
                             <h2>REGISTER</h2>
                         </div>
                         <div class="authorize_form">
-                            <form>
+                            <form method="POST" action="{{ route('register') }}">
+                                 @csrf
                                 <div class="form-group">
-                                    <input type="text" name="name" placeholder="Name" required/>
+                                    <input type="text" name="name" id="name" placeholder="Name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" required autofocus/>
+                                     @if ($errors->has('name'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="identity" placeholder="BVN or RC Number" required/>
+                                    <input type="text" id="identity" name="identity" placeholder="BVN or RC Number" class="form-control{{ $errors->has('identity') ? ' is-invalid' : '' }}" required/>
+                                     @if ($errors->has('identity'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('identity') }}</strong>
+                                    </span>
+                                @endif
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="creating_party_phone" placeholder="Phone Number" required/>
+                                    <input type="text" name="phonenumber" id="phonenumber" placeholder="Phone Number" class="form-control{{ $errors->has('phonenumber') ? ' is-invalid' : '' }}" required/>
+                                     @if ($errors->has('phonenumber'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('phonenumber') }}</strong>
+                                    </span>
+                                @endif
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" name="email" placeholder="E-mail" required/>
+                                    <input type="email" name="email" id="email" placeholder="E-mail" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"  required/>
+                                     @if ($errors->has('email'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" id="password-field" name="password" placeholder="Password" required/>
+                                    <input type="password" id="password-field" name="password" placeholder="Password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" required/>
                                     <span data-toggle="#password-field" class="ion-eye toggle-password"></span>
+                                    @if ($errors->has('password'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                                    
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" id="cpassword-field" name="password" placeholder="Confirm Password" required/>
+                                    <input type="password" id="password-confirm" name="password_confirmation" placeholder="Confirm Password" required/>
                                     <span data-toggle="#cpassword-field" class="ion-eye toggle-password"></span>
                                 </div>
                                 <div class="form-group">
                                     <div class="checkbox_field d-inline">
-                                        <input type="checkbox" value="rememberme" id="rememberme" name="rememberme">
-                                        <label for="rememberme">I agree with <a href="terms">Terms of Services</a></label>
+                                        <input type="checkbox" value="rememberme" id="rememberme" name="rememberme" required />
+                                        <label for="rememberme">I agree with <a href="/terms">Terms of Services</a></label>
                                     </div>
                                 </div>
                                 <div class="form-group text-center">

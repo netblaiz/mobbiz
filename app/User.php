@@ -15,13 +15,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name',
-        'middle_name',
-        'last_name',
+        'name',
+        'identity',
+        'phonenumber',
         'email',
         'password',
-        'city',
-        'role_id',
+        //'city',
+        //'role_id',
     ];
 
     /**
@@ -53,8 +53,12 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Task');
     }
 
-     public function projects() {
-        return $this->belongsToMany('App\Project');
+     public function agreements() {
+        return $this->hasMany('App\Agreement');
     }
+
+    //public function agreements() {
+        //return $this->belongsToMany('App\Agreement');
+   // }
 
 }

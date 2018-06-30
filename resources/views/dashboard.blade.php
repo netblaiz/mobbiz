@@ -4,7 +4,8 @@
    <section id="token" class="section_token">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+
+                 <div class="col-md-6">
                     <div class="row text-left">
                         <div class="col-md-12">
                             <div class="title_dark">
@@ -77,6 +78,7 @@
                     <br>
                     <a href="received" class="btn btn-default"> View all </a>
                 </div>
+               
 
                 <div class="col-md-6">
                     <div class="row text-left">

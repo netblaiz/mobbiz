@@ -15,7 +15,13 @@ class CreateAgreementsTable extends Migration
     {
         Schema::create('agreements', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('content');
+            $table->unsignedInteger('recipientcount');
+            $table->string('signature')->nullable()->unique();
             $table->timestamps();
+            $table->unsignedInteger('status')->default('1');
         });
     }
 

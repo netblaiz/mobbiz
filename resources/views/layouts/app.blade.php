@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Mobbiz Digital Business Associate" />
     <meta name="author" content="Hinet Technologies">
+     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- SITE TITLE -->
     <title> Mobbiz: New </title>
     <!-- Favicon Icon -->
@@ -48,10 +49,10 @@
 
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                      <li><a class="nav-link page-scroll" href="">godwinoluyomi@gmail.com</a></li>
+                      <li><a class="nav-link page-scroll" href="">{{ Auth::user()->email }}</a></li>
                     </ul>
                     <ul class="navbar-nav nav_btn">
-                      <li><a class="btn btn-default" href="logout.php">Logout</a></li>
+                      <li><a class="btn btn-default" href="{{ route('logout') }}">Logout</a></li>
                       <!-- <li><a class="nav-link page-scroll btn btn-default" href="#mobileapp">Our App</a></li> -->
                     </ul>
                 </div>

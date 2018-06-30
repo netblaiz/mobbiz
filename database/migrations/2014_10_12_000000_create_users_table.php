@@ -16,21 +16,20 @@ class CreateUsersTable extends Migration
         //if(!Schema::hasTable('users')) {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->nullable();
-            //$table->string('first_name')->nullable();
-            //$table->string('middle_name')->nullable();
-            //$table->string('last_name')->nullable();
+            $table->string('name');
             $table->string('password');
             $table->string('email')->unique();
-            $table->string('phonenumber')->nullable();
-            $table->unsignedInteger('role_id');
+            $table->string('phonenumber');
+            $table->string('identity');
+            $table->integer('identity_type'); //1 is for BvN while 2 is for RC number
+            $table->integer('status')->default(1);
             
 
             $table->rememberToken();
             $table->timestamps();
         });
 }
-       // Schema::table('users', function (Blueprint $table) {
+      // Schema::table('users', function (Blueprint $table) {
             
             
             
